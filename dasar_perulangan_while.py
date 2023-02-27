@@ -1,16 +1,25 @@
 """
-program prulangan membaca buku dengan while
+program prulangan membaca buku dengan while sampai paham
 """
-jumlah_buku = 10
+book_count = 10
 print('Ibu berkata,"Baca semua bukumu"')
 
-jumlah_buku_yang_sudah_dibaca = 0
-print(f'Jumlah buku yang sudah dibaca {jumlah_buku_yang_sudah_dibaca} ')
+understood_count = 0
+print(f'Jumlah buku yang sudah dibaca dan dipahami {understood_count} ')
+read_count = 10
 
-while jumlah_buku_yang_sudah_dibaca < jumlah_buku:
-    jumlah_buku_yang_sudah_dibaca = jumlah_buku_yang_sudah_dibaca + 1
-    print(f"Buku ke {jumlah_buku_yang_sudah_dibaca} sudah dibaca")
+while   read_count < book_count * 2:
+    read_count = read_count + 1
+    if understood_count == 9:
+        print(f'Buku ke {understood_count + 1} belum paham')
+    else:
+        understood_count = understood_count + 1
+        print(f"Buku ke {understood_count} sudah dibaca dan dipahami")
 
-print(f'Jumlah buku yang sudah dibaca {jumlah_buku_yang_sudah_dibaca} ')
+print(f'Jumlah buku yang sudah dibaca {understood_count} ')
+if understood_count == book_count:
+    print('"Bu, semua buku sudah dibaca dan dipahami')
+else:
+    print(f'"Bu, tidak semua buku dipahami, Budi hanya bisa memahami {understood_count} buku')
 
 
